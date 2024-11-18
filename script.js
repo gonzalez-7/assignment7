@@ -30,3 +30,9 @@ document.addEventListener("keydown", (event) => {
       fontSize *= 1.1;
       balloon.style.fontSize = `${fontSize}px`;
       event.preventDefault();
+    } else if (event.key === "ArrowDown") {
+    fontSize *= 0.9;
+    balloon.style.fontSize = `${fontSize}px`;
+    event.preventDefault();
+      }
+    });
