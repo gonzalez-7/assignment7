@@ -29,3 +29,4 @@ document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp") {
       fontSize *= 1.1;
       balloon.style.fontSize = `${fontSize}px`;
+      event.preventDefault();
