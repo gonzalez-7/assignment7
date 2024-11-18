@@ -45,3 +45,15 @@ const contents = document.querySelectorAll("#tabbed-contents div");
 contents.forEach((content, index) => {
     content.style.display = index === 0 ? "block" : "none";
   });
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    contents.forEach((content) => {
+      content.style.display = "none";
+    });
+
+    contents[index].style.display = "block";
+  });
+});
