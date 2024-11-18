@@ -40,3 +40,8 @@ document.addEventListener("keydown", (event) => {
 // Task 2:
 const tabs = document.querySelectorAll("#tabbed-layout ul li a");
 const contents = document.querySelectorAll("#tabbed-contents div");
+
+
+contents.forEach((content, index) => {
+    content.style.display = index === 0 ? "block" : "none";
+  });
