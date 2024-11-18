@@ -21,21 +21,20 @@
 // Hint: display: none; hides an element, and display: block; will bring it
 
 // Task 1: 
-const balloon = document.getElementById("balloon");
+const balloon = document.getElementById("balloon"); // Select the balloon element by its ID
 let fontSize = 30; // Starting font size in pixels
-balloon.style.fontSize = `${fontSize}px`;
-
-document.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowUp") {
-      fontSize *= 1.1;
-      balloon.style.fontSize = `${fontSize}px`;
-      event.preventDefault();
-    } else if (event.key === "ArrowDown") {
-    fontSize *= 0.9;
-    balloon.style.fontSize = `${fontSize}px`;
-    event.preventDefault();
-      }
-    });
+balloon.style.fontSize = `${fontSize}px`; // Apply the initial font size to the balloon
+document.addEventListener("keydown", (event) => { // Listen for keydown events on the document
+    if (event.key === "ArrowUp") { // Check if the pressed key is the up arrow
+        fontSize *= 1.1; // Increase the font size by 10%
+        balloon.style.fontSize = `${fontSize}px`; // Update the balloon's font size
+        event.preventDefault(); // Prevent the default browser behavior (e.g., page scrolling)
+    } else if (event.key === "ArrowDown") { // Check if the pressed key is the down arrow
+        fontSize *= 0.9; // Decrease the font size by 10%
+        balloon.style.fontSize = `${fontSize}px`; // Update the balloon's font size
+        event.preventDefault(); // Prevent the default browser behavior (e.g., page scrolling)
+    }
+});
 
 // Task 2:
 const tabs = document.querySelectorAll("#tabbed-layout ul li a");
