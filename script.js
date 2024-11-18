@@ -36,3 +36,7 @@ document.addEventListener("keydown", (event) => {
     event.preventDefault();
       }
     });
+
+// Task 2:
+const tabs = document.querySelectorAll("#tabbed-layout ul li a");
+const contents = document.querySelectorAll("#tabbed-contents div");
