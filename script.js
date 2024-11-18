@@ -24,3 +24,8 @@
 const balloon = document.getElementById("balloon");
 let fontSize = 30; // Starting font size in pixels
 balloon.style.fontSize = `${fontSize}px`;
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowUp") {
+      fontSize *= 1.1;
+      balloon.style.fontSize = `${fontSize}px`;
