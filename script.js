@@ -37,22 +37,21 @@ document.addEventListener("keydown", (event) => { // Listen for keydown events o
 });
 
 // Task 2:
-const tabs = document.querySelectorAll("#tabbed-layout ul li a");
-const contents = document.querySelectorAll("#tabbed-contents div");
+const tabs = document.querySelectorAll("#tabbed-layout ul li a"); // Select all tab links inside the tabbed layout
+const contents = document.querySelectorAll("#tabbed-contents div"); // Select all tab contents inside the tabbed layout
 
+contents.forEach((content, index) => { 
+    content.style.display = index === 0 ? "block" : "none"; // Show the first tab content and hide the rest
+});
 
-contents.forEach((content, index) => {
-    content.style.display = index === 0 ? "block" : "none";
-  });
+tabs.forEach((tab, index) => { 
+  tab.addEventListener("click", (event) => { // Add a click event listener to each tab link
+    event.preventDefault(); // Prevent the default link behavior (e.g., page refreshing)
 
-tabs.forEach((tab, index) => {
-  tab.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    contents.forEach((content) => {
-      content.style.display = "none";
+    contents.forEach((content) => { 
+      content.style.display = "none"; // Hide all tab contents
     });
 
-    contents[index].style.display = "block";
+    contents[index].style.display = "block"; // Display the content corresponding to the clicked tab
   });
 });
